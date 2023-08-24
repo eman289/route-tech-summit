@@ -31,4 +31,4 @@ The Route Tech Summit website serves as a platform to showcase information about
 
 ## Demo
 
-You can access the live demo of the project [Here](https://github.com/eman289/route-tech-summit.git).
+You can access the live demo of the project [Here](https://eman289.github.io/route-tech-summit/).
