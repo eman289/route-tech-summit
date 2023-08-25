@@ -57,22 +57,26 @@ $(function () {
     $(".mins h3").html(`${minutes} m`);
     $(".secs h3").html(`${seconds} s`);
   }, 1000);
-});
 
-// textArea characters
+  // textArea characters
 
-const textArea = $(".contact textarea");
-const charsCount = $("#chars");
-const maxChars = 100;
+  const textArea = $(".contact textarea");
+  const charsCount = $("#chars");
+  const charsText = $("#charsText");
+  const maxChars = 100;
 
-textArea.on("input", function () {
-  const remainingChars = maxChars - textArea.val().length;
-  if (remainingChars > 0) {
-    charsCount.text(remainingChars);
-  } else {
-    $("#charsText").text("");
-    $("#chars").text(
-      "You have exceeded the maximum number of characters allowed!"
-    );
-  }
+  textArea.on("input", function () {
+    const remainingChars = maxChars - textArea.val().length;
+    if (remainingChars > -1) {
+      charsCount.text(remainingChars).css("color", "green");
+      charsText.text("characters remaining");
+    } else {
+      charsText.text("");
+      charsCount
+        .text(
+          `${remainingChars} You have exceeded the maximum number of characters allowed!`
+        )
+        .css("color", "red");
+    }
+  });
 });
